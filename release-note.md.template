@@ -1,0 +1,31 @@
+# release-note
+
+## Version=0.1.0
+
+1. feat: initial release
+
+<!-- Conventions (delete this comment block after reading):
+- The third line of this file MUST be `## Version=X.Y.Z`, matching
+  [project].version in pyproject.toml exactly (tsc-spec 5.5).
+- Versions MUST follow Semantic Versioning 2.0.0 (MAJOR.MINOR.PATCH).
+- New versions are prepended directly below the title, newest first.
+- Each entry is a numbered list item in the form `type(scope): description`.
+  - type:
+    - feat: new user-facing capability
+    - fix: bug fix; name the symptom, not just the cause
+    - refactor: behavior-preserving restructuring
+    - docs: documentation only
+    - chore: tooling, dependencies, build; no behavior change
+    - perf: measurable performance improvement
+  - scope: the affected module or path; omit only for truly global changes
+  - description: what changed and why, in one sentence
+- TODO items MUST NOT appear here; track them in issues instead.
+
+Example:
+
+    ## Version=0.2.0
+
+    1. feat(lib/tsc_logger.py): add JSON log output for Loki ingestion
+    2. fix(services/deploy.py): stop retrying on 4xx responses to avoid
+       duplicate Ansible runs
+-->

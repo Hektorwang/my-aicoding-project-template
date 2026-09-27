@@ -1,0 +1,58 @@
+# Reference configuration from tsc-spec Section 5.3.
+# Edit the fields marked with TODO, then delete these comments.
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "your-package" # TODO: package name (lowercase, hyphens)
+version = "0.1.0" # TODO: SemVer, single source of truth (tsc-spec 5.5)
+description = "Short project description" # TODO
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+authors = [{ name = "Team Name", email = "team@example.com" }] # TODO
+dependencies = [
+    "loguru>=0.7",
+]
+
+[project.scripts]
+your-cli = "your_package.__main__:main" # TODO: cli name and package path
+
+[dependency-groups]
+dev = [
+    "black>=24.0",
+    "mypy>=1.11",
+    "pylint>=3.2",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/your_package"] # TODO: package directory under src/
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["src", "tests"]
+
+[tool.pylint.main]
+py-version = "3.13"
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["your_package"] # TODO: package name (underscores)
+
+[tool.coverage.report]
+fail_under = 80

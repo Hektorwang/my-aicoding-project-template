@@ -6,14 +6,15 @@
 
 - Node.js(LTS 即可)
 - Git
+- (可选) shfmt + shellcheck:派生项目包含 Shell 脚本时需要(tsc-spec 第 12、16 章强制要求),需自行安装,本模板不分发
 
 ## 使用方法
 
 1. 在 GitHub 用这个模板创建新仓库("Use this template" 按钮,或 `gh repo create <新项目名> --template <你的用户名>/my-aicode-project-template --clone`)
 2. clone 到本地后运行:
-   node scripts\init.mjs
+   node scripts/init.mjs
 3. 安装过程会依次询问"装哪些技能"和"装到哪个 agent",参考下面两张表选择
-4. 编辑自动生成的 CLAUDE.md,填写项目背景、需求
+4. 编辑自动生成的 CLAUDE.md 和 pyproject.toml:前者填写项目背景、需求,后者填写标了 TODO 的包名、版本、作者等字段(若改了 pyproject.toml 的 version,需同步改 release-note.md 第三行,tsc-spec 5.5 强制)
 5. 在选定的 agent 里运行 grill,让它面试你、查漏补缺
 
 ## 技能选择参考
