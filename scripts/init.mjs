@@ -1,10 +1,8 @@
 import { execSync } from "node:child_process";
 import { existsSync, copyFileSync } from "node:fs";
 
-const agent = process.argv[2] || "claude-code";
-
-console.log(`Installing grill workflow skills for agent: ${agent}...`);
-execSync(`npx skills add mattpocock/skills --skill grill-with-docs --skill grilling --skill domain-modeling --skill ask-matt --skill to-prd --skill to-issues --skill implement --skill code-review --agent ${agent} -y`, { stdio: "inherit" });
+console.log("Starting skill installation. Follow the prompts to choose skills and target agent.");
+execSync("npx skills add mattpocock/skills", { stdio: "inherit" });
 
 console.log("Generating CLAUDE.md...");
 if (!existsSync("CLAUDE.md")) {
